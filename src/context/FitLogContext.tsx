@@ -88,14 +88,18 @@ export const FitLogProvider = ({
     };
 
     const markAsDone = (id: number) => {
-        setCompletedIds((previousIds) => {
-            if (previousIds.includes(id)) {
-                return previousIds;
-            }
+    setPlan((previousPlan) =>
+        previousPlan.filter((workout) => workout.id !== id)
+    );
 
-            return [...previousIds, id];
-        });
-    };
+    setCompletedIds((previousIds) => {
+        if (previousIds.includes(id)) {
+            return previousIds;
+        }
+
+        return [...previousIds, id];
+    });
+};
 
     return (
         <FitLogContext.Provider

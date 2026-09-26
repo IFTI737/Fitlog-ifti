@@ -11,7 +11,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
   return (
     <Link
       href={`/exercise/${workout.id}`}
-      className="group block overflow-hidden rounded-2xl border border-[#292d34] bg-[#191c22] transition hover:border-[#3a3f48]"
+      className="group block overflow-hidden rounded-2xl border border-[#292d34] bg-[#191c22] transition-all duration-300 hover:-translate-y-1 hover:border-[#ccff00] hover:shadow-[0_0_18px_rgba(204,255,0,0.18)]"
     >
       {/* Image */}
       <div className="relative aspect-[1.85/1] overflow-hidden">
