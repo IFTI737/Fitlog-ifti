@@ -10,7 +10,7 @@ The application is designed with a responsive dark fitness-themed interface and 
 
 ## 🔗 Live Site
 
-**Live Project:** [Add your Vercel live link here]
+**Live Project:** [https://fitlog-by-ifti.vercel.app/]
 
 **GitHub Repository:** [Add your GitHub repository link here]
 
