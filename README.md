@@ -10,9 +10,9 @@ The application is designed with a responsive dark fitness-themed interface and 
 
 ## 🔗 Live Site
 
-**Live Project:** https://fitlog-by-ifti.vercel.app/
+**Live Project:** [https://fitlog-by-ifti.vercel.app/](https://fitlog-by-ifti.vercel.app/)
 
-**GitHub Repository:** https://github.com/IFTI737/Fitlog-ifti
+**GitHub Repository:** [https://github.com/IFTI737/Fitlog-ifti](https://github.com/IFTI737/Fitlog-ifti)
 
 ---
 
@@ -351,4 +351,4 @@ The project includes the required functionality:
 CSE Student | Full-Stack Developer | AI/ML Enthusiast
 
 * GitHub: [@IFTI737](https://github.com/IFTI737)
-* Live Project: [FitLog](Add-your-live-link-here)
+* Live Project: [FitLog](https://fitlog-by-ifti.vercel.app/)
