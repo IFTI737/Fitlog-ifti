@@ -3,17 +3,52 @@
 import { toast } from "react-toastify";
 
 import { Workout } from "@/types/fitlog";
+import { useFitLog } from "@/context/FitLogContext";
 
 interface WorkoutActionsProps {
     workout: Workout;
 }
 
 const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
+    const {
+        plan,
+        saved,
+        addToPlan,
+        addToSaved,
+    } = useFitLog();
+
     const handleAddToPlan = () => {
+        if (plan.length >= 5) {
+            toast.error("Today's plan can have a maximum of 5 exercises.");
+            return;
+        }
+
+        const alreadyExists = plan.some(
+            (item) => item.id === workout.id
+        );
+
+        if (alreadyExists) {
+            toast.info(`${workout.name} is already in today's plan.`);
+            return;
+        }
+
+        addToPlan(workout);
+
         toast.success(`${workout.name} added to today's plan.`);
     };
 
     const handleSave = () => {
+        const alreadySaved = saved.some(
+            (item) => item.id === workout.id
+        );
+
+        if (alreadySaved) {
+            toast.info(`${workout.name} is already saved.`);
+            return;
+        }
+
+        addToSaved(workout);
+
         toast.success(`${workout.name} saved for later.`);
     };
 

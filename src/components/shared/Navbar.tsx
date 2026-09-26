@@ -5,12 +5,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { useFitLog } from "@/context/FitLogContext";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
     const pathname = usePathname();
 
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const {
+        plan,
+        saved,
+    } = useFitLog();
 
     const workoutActive = pathname === "/";
     const planActive = pathname === "/my-plan";
@@ -78,7 +84,6 @@ const Navbar = () => {
 
                 {/* Counters */}
                 <div className="flex items-center gap-5 md:gap-8">
-
                     <Link
                         href="/my-plan"
                         className="flex items-center gap-2 text-[15px] font-semibold text-[#dfe1e6] md:text-[16px]"
@@ -86,7 +91,7 @@ const Navbar = () => {
                         Plan
 
                         <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-[#ccff00] px-2 text-[14px] font-bold text-black">
-                            0
+                            {plan.length}
                         </span>
                     </Link>
 
@@ -97,19 +102,16 @@ const Navbar = () => {
                         Saved
 
                         <span className="flex h-7 min-w-7 items-center justify-center rounded-full border border-[#777b83] px-2 text-[14px] font-bold text-white">
-                            0
+                            {saved.length}
                         </span>
                     </Link>
-
                 </div>
             </nav>
 
             {/* Mobile Navigation */}
             {menuOpen && (
                 <div className="absolute left-0 top-[70px] w-[260px] overflow-hidden rounded-b-2xl border border-[#292d34] bg-[#191c22] md:hidden">
-
                     <div className="flex flex-col p-2">
-
                         <Link
                             href="/"
                             onClick={() => setMenuOpen(false)}
@@ -133,7 +135,6 @@ const Navbar = () => {
                         >
                             My Plan
                         </Link>
-
                     </div>
                 </div>
             )}

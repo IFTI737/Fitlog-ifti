@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Workout } from "@/types/fitlog";
+
 import WorkoutStats from "./WorkoutStats";
 
 interface WorkoutDetailsProps {
@@ -11,7 +12,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
     return (
         <section className="mx-auto w-full max-w-[1200px] px-3 py-8 sm:px-4 md:px-6 lg:px-0">
             <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-                {/* Workout Image */}
                 <div className="relative aspect-[0.82] overflow-hidden rounded-2xl">
                     <Image
                         src={workout.image}
@@ -23,7 +23,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
                     />
                 </div>
 
-                {/* Workout Information */}
                 <div className="flex flex-col">
                     <h1 className="text-[40px] font-bold uppercase leading-none text-[#e5e7eb] sm:text-[44px] lg:text-[48px]">
                         {workout.name}
@@ -33,7 +32,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
                         {workout.description}
                     </p>
 
-                    {/* Muscle Groups */}
                     <div className="mt-5 flex flex-wrap gap-2">
                         {workout.muscleGroups.map((muscleGroup) => (
                             <span
@@ -45,7 +43,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
                         ))}
                     </div>
 
-                    {/* Workout Stats */}
                     <WorkoutStats workout={workout} />
                 </div>
             </div>
