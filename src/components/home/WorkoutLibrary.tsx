@@ -1,5 +1,6 @@
 import { getWorkouts } from "@/lib/fitlog";
-import WorkoutCard from "./WorkoutCard";
+
+import WorkoutSearch from "./WorkoutSearch";
 
 const WorkoutLibrary = async () => {
     const workouts = await getWorkouts();
@@ -24,15 +25,8 @@ const WorkoutLibrary = async () => {
                 </p>
             </div>
 
-            {/* Workout Cards */}
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {workouts.map((workout) => (
-                    <WorkoutCard
-                        key={workout.id}
-                        workout={workout}
-                    />
-                ))}
-            </div>
+            {/* Search + Workout Cards */}
+            <WorkoutSearch workouts={workouts} />
         </section>
     );
 };
